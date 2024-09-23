@@ -1,0 +1,53 @@
+@HTTPswagerTEST_HostAddress = http://localhost:5108
+
+
+
+GET {{HTTPswagerTEST_HostAddress}}/ToBuyItems/
+Accept: application/json
+
+###
+
+POST {{HTTPswagerTEST_HostAddress}}/ToBuyItems/
+Content-Type: application/json
+Accept-Language: en, ru;q=0.5
+
+{
+    "name": "Голубцы",
+    "quantity": 1
+}
+
+###
+
+PUT {{HTTPswagerTEST_HostAddress}}/ToBuyItems/7
+Content-Type: application/json
+Accept-Language: en, ru;q=0.5
+
+{
+  "id": 7,
+  "name": "Шашлык",
+  "quantity": 2,
+  "isBought": false
+}
+
+
+###
+
+PATCH {{HTTPswagerTEST_HostAddress}}/ToBuyItems/2/isBought
+Content-Type: application/json
+Accept-Language: en, ru;q=0.5
+
+{
+    "isBought": "false",
+}
+
+
+###
+
+
+
+
+DELETE {{HTTPswagerTEST_HostAddress}}/ToBuyItems/4
+Content-Type: application/json
+
+###
+
